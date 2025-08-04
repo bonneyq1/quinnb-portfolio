@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial scale=1.0"
+    <title>Quinn Bonney Portfolio -On Its Way</title>
+    <style>
+         /* Remove default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body takes full screen */
+        body {
+            height: 100vh;
+            background-color: white;
+        }
+
+        /* Image fills entire screen */
+        .main-image {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            background-color: white;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: black;
+        }
+
+        body.dark-mode .main-image {
+            filter: invert(1);
+            background-color: black;
+        }
+
+        /* Toggle button in top right */
+        .theme-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .theme-button:hover {
+            background-color: #555;
+        }
+
+        /* Contact box in bottom right */
+        .contact-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* Dark mode for contact box */
+        body.dark-mode .contact-box {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+
+        /* Contact links */
+        .contact-box a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        body.dark-mode .contact-box a {
+            color: #66aaff;
+        }
+
+        /* Simple responsive design */
+        @media (max-width: 600px) {
+            .contact-box {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .theme-button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme toggle button -->
+    <button class="theme-button" onclick="toggleDarkMode()">
+        Dark Mode
+    </button>
+
+    <!-- Main image that fills the screen -->
+    <img src="Website_ComingSoon.png" alt="Portfolio Coming Soon" class="main-image">
+
+    <!-- Contact information box -->
+    <div class="contact-box">
+        <strong>Contact Me:</strong><br>
+        Email: <a href="quinnbonney@gmail.com">your-email@gmail.com</a><br>
+        LinkedIn: <a href="https://www.linkedin.com/in/quinn-bonney-696964263" target="_blank">https://www.linkedin.com/in/quinn-bonney-696964263</a>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const button = document.querySelector('.theme-button');
+            
+            if (body.classList.contains('dark-mode')) {
+                // Switch to light mode
+                body.classList.remove('dark-mode');
+                button.textContent = 'Dark Mode';
+            } else {
+                // Switch to dark mode
+                body.classList.add('dark-mode');
+                button.textContent = 'Light Mode';
+            }
+        }
+    </script>
+</body>
+</html>
